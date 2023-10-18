@@ -14,7 +14,6 @@ char **pathcpy()
 	path = getenv("PATH");
 	_stcpy(npath, path);
 	pathcpy = _tokenise(npath, ":");
-	if (pathcpy == NULL)
 	return (pathcpy);
 }
 
