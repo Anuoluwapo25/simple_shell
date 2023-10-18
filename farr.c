@@ -14,3 +14,4 @@ void _farr(char **str)
 		free(str[i]);
 	free(str);
 }
+

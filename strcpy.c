@@ -13,9 +13,10 @@ char *_stcpy(char *dest, const char *src)
 
 	while (*(src + len) != '\0')
 	{
-		*(dest + len) = *(src + 1);
+		*(dest + len) = *(src + len);
 		len++;
 	}
+
 	*(dest + len) = '\0';
 	return (dest);
 }

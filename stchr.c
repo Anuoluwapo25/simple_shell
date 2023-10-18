@@ -4,9 +4,9 @@
 
 /**
  * _stchr - a function that locates a character.
- * @a: pointer to a string
- * @s: character to search
- * Return: return the first occurrence of the character
+ * @a: pointer to a string.
+ * @s: character to search.
+ * Return: return the first occurrence of the character.
  */
 
 char *_stchr(char *a, char s)
@@ -21,3 +21,4 @@ char *_stchr(char *a, char s)
 	}
 	return (a);
 }
+

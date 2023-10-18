@@ -5,10 +5,8 @@
  */
 int main(void)
 {
-	char *cmd;
+	char *cmd, *fullpath = NULL, **cmdtok, **pathcp = NULL;
 	size_t count = 0;
-	char **cmdtok;
-	const char *delim = "\t\n ";
 	ssize_t readline;
 
 	signal(SIGINT, _signal);
@@ -17,20 +15,23 @@ int main(void)
 		cmd = NULL;
 		cmdtok = NULL;
 		if (isatty(STDIN_FILENO))
-		{
 			prompt();
-		}
 		readline = getline(&cmd, &count, stdin);
 		if (readline != -1)
 		{
-			cmdtok = _tokenise(cmd, delim);
-			if (strcmp(cmdtok[0], "exit") == 0)
+			cmdtok = _tokenise(cmd, "\t\n ");
+			if (cmdtok[0] == NULL)
 			{
 				free(cmd);
-				_farr(cmdtok);
-				break;
+				free(cmdtok);
+				continue;
 			}
-			_execute(cmdtok);
+			if (_stchr(cmdtok[0], '/') != NULL)
+				_exe_cute(cmdtok[0], cmdtok);
+			else if (strcmp(cmd, "exit") == 0)
+				_ext(cmd, cmdtok);
+			else
+				_exepath(pathcp, fullpath, cmdtok);
 			_farr(cmdtok);
 			free(cmd);
 		}

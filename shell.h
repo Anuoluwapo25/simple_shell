@@ -19,8 +19,8 @@ int _tokcount(char *command, const char *delim);
 char *pathname(char *cmd, char **pathcpy);
 char **_tokenise(char *command, const char *delim);
 void _farr(char **token);
-void _execute(char **command);
-void _ext(char *cmd);
+void _exepath(char **pathcp, char *fullpath, char **cmdtok);
+void _ext(char *cmd, char **cmdtok);
 int _exe_cute(char *cmd, char **cmdline);
 int _singlep(char a);
 char *_stcpy(char *dest, const char *src);
@@ -31,3 +31,4 @@ char *_stchr(char *a, char s);
 void prompt(void);
 
 #endif
+

@@ -16,7 +16,9 @@ int _tokcount(char *command, const char *delim)
 	cmd = _stdup(command);
 	if (cmd == NULL)
 		return (0);
+
 	token = strtok(cmd, delim);
+
 	while (token)
 	{
 		count++;

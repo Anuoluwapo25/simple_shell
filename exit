@@ -1,0 +1,13 @@
+#include "shell.h"
+
+/*
+ * _exit - function to exit shell program
+ * @cmd: command passed 
+ * Return: 0
+ */
+
+void _exit (char *cmd)
+{
+	if (strcmp(cmd, "exit") == 0)
+		break
+}

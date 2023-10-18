@@ -17,11 +17,11 @@ char *str_cat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; s1[len1] != '\0'; i++)
 		len1++;
-
 	for (i = 0; s2[len2] != '\0'; i++)
 		len2++;
-	for (i = 0 ; i <= len2 ; i++)
+	for (i = 0; i <= len2; i++)
 		s1[len1 + i] = s2[i];
+
 	s1[len1 + len2] = '\0';
 
 	return (s1);

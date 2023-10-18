@@ -1,9 +1,10 @@
 #include "shell.h"
+
 /**
- * pathcpy - funtion that print path sepearated by delim
- *
- * Return: pathcpy
+ * pathcpy - funtion that print path sepearated by delim.
+ * Return: NULL.
  */
+
 #define NPATH 10000
 char **pathcpy()
 {
@@ -20,7 +21,7 @@ char **pathcpy()
 /**
  * pathname - funtion that print path sepearated by delim.
  * @cmd: command
- * @pathcpy: environmental variable
+ * @pathcpy: variable passed
  * Return: NULL.
  */
 char *pathname(char *cmd, char **pathcpy)
@@ -46,4 +47,6 @@ char *pathname(char *cmd, char **pathcpy)
 		free(pathexe);
 	}
 	return (NULL);
+
 }
+
