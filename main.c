@@ -31,12 +31,6 @@ int main(void)
                                 break;
                         }
 			_execute(cmdtok);
-			/*if (strcmp(cmdtok[0], "exit") == 0)
-			{
-				free(cmd);
-				_farr(cmdtok);
-				break;
-			}*/
 			_farr(cmdtok);
 			free(cmd);
 		}
