@@ -24,13 +24,19 @@ int main(void)
 		if (readline != -1)
 		{
 			cmdtok = _tokenise(cmd, delim);
-			_execute(cmdtok);
 			if (strcmp(cmdtok[0], "exit") == 0)
+                        {
+                                free(cmd);
+                                _farr(cmdtok);
+                                break;
+                        }
+			_execute(cmdtok);
+			/*if (strcmp(cmdtok[0], "exit") == 0)
 			{
 				free(cmd);
 				_farr(cmdtok);
 				break;
-			}
+			}*/
 			_farr(cmdtok);
 			free(cmd);
 		}
