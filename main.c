@@ -25,11 +25,11 @@ int main(void)
 		{
 			cmdtok = _tokenise(cmd, delim);
 			if (strcmp(cmdtok[0], "exit") == 0)
-                        {
-                                free(cmd);
-                                _farr(cmdtok);
-                                break;
-                        }
+			{
+				free(cmd);
+				_farr(cmdtok);
+				break;
+			}
 			_execute(cmdtok);
 			_farr(cmdtok);
 			free(cmd);
